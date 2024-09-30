@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">  
+    <link rel="stylesheet" href="/static/css/custom.css">  
+</head>
+<body>
+    <div class="ui container">
+        <h1 class="ui dividing header">Text Highlighter and Dictionary Search</h1>
+        
+        <!-- Text Input Form -->
+        <form id="textForm" class="ui form">
+            <div class="field">
+                <label for="text_input">Enter Text (max 500 characters):</label>
+                <textarea id="text_input" name="text_input" rows="5" maxlength="500" placeholder="Enter your text here..." required></textarea>
+            </div>
+            <button type="submit" class="ui primary button">Submit</button>
+        </form>
+
+        <!-- Loading Spinner -->
+        <div class="ui active centered inline loader" id="loadingSpinner" style="display: none;"></div>
+        
+        <!-- Highlighted Text Result -->
+        <div id="highlightedResult" class="ui segment hidden" id="highlightedResult" style="display: none;">
+            <h3 class="ui header">Highlighted Text</h3>
+            <p id="highlightedText"></p>
+            <p id="suggestedText"></p>
+        </div>
+        
+        <!-- Combined Dictionary Search and Suggestion Result -->
+        <div class="ui two column grid">
+            <div class="column" >
+                <!-- Dictionary Search and Result -->
+                <div id="dictionarySection" class="ui eight wide column segment hidden" style="display: none;">
+                    <h3 class="ui header">Dictionary Search</h3>
+                    <div class="ui icon input">
+                        <input type="text" id="searchInput" placeholder="Search words...">
+                        <i class="search icon"></i>
+                    </div>
+                    <div id="dictionaryResult" class="ui relaxed divided list"></div>
+                </div>
+            </div>
+            <div class="column">
+                <!-- Suggestion Result -->
+                <div id="suggestionSection" class="ui eight wide column segment hidden" style="display: none;">
+                    <h3 class="ui header">Suggestions</h3>
+                    <div id="suggestionResult" class="ui relaxed divided"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery (Required for Semantic UI JavaScript components) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Semantic UI JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <!-- Include the external JavaScript file -->
+    <script src="/static/js/home.js"></script>
+</body>
+</html>
