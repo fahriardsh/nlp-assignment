@@ -1,5 +1,8 @@
 # app.py
 
+import os
+os.system("pip install numpy==1.19.5")
+
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
 
